@@ -28,6 +28,10 @@
   --col-hornet-sting: #{$col-hornet-sting};
   --col-bubbelgum-heart: #{$col-bubbelgum-heart};
 
+  --col-downwell: #{$col-downwell};
+  --col-lexaloffle-green: #{$col-lexaloffle-green};
+  --col-lexaloffle-green-rgb: #{$col-lexaloffle-green-rgb};
+
   // Z-indexes
   --z-modal-overlay: 14;
   --z-modal: 9;
@@ -64,9 +68,9 @@
     var(--slide-transition-timing-function);
 
   // Base
-  --container-max-width: 100%;
+  --container-max-width: #{to-rem(380)};
   --container-side-padding: #{to-rem(20)};
-  --primary-text-color: var(--col-total-white);
+  --primary-text-color: var(--col-radiant-silver);
 
   @include respond-above(medium) {
     --container-max-width: #{to-rem(1100)};

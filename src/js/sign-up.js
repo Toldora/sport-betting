@@ -208,8 +208,3 @@ export const openSignUpModal = ({ isBlocked } = {}) => {
 
   openModal({ isBlocked });
 };
-
-timeout = setTimeout(() => {
-  openSignUpModal();
-  clearTimeout(timeout);
-}, 45000);
