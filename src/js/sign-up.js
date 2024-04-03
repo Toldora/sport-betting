@@ -13,7 +13,6 @@ import { AUTH_FIELD, ERROR_MESSAGES_EN, ERROR_MESSAGES_PT } from '@/const';
 
 const modalContentRef = document.querySelector('.js-app-modal-content');
 let formRef = null;
-let timeout = null;
 
 const state = {
   isValid: false,
@@ -213,9 +212,6 @@ function togglePasswordVisibility() {
 }
 
 export const openSignUpModal = ({ isBlocked } = {}) => {
-  if (timeout) {
-    clearTimeout(timeout);
-  }
   const markup = handlebars.compile(template)();
 
   modalContentRef.innerHTML = '';
@@ -244,12 +240,6 @@ export const openSignUpModal = ({ isBlocked } = {}) => {
   [...hidePasswordBtnRefs].forEach(ref => {
     ref.addEventListener('click', togglePasswordVisibility);
   });
-
-  // const loginBtnRef = formRef.querySelector('.js-switch-to-login-btn');
-  // loginBtnRef.addEventListener('click', () => {
-  //   openLoginModal({ isBlocked });
-  //   state.isVisiblePassword = false;
-  // });
 
   openModal({ isBlocked });
 };

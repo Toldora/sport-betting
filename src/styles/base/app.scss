@@ -127,6 +127,7 @@ a {
 }
 
 .app {
+  min-height: vh(100);
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -135,14 +136,46 @@ a {
   @include bg-img-webp('/img/bg/ver', true);
 
   @include respond-above(medium) {
-    height: vh(100);
+    display: grid;
+    grid-template-columns: 6.6fr 3.3fr;
+    background-size: cover;
+
+    @include bg-img-webp('/img/bg/hor', true);
+  }
+
+  @include respond-above(large) {
+    grid-template-columns: 7fr 3fr;
   }
 }
 
-.app__desktop-sign-up {
+.app__logo {
+  margin-bottom: to-rem(40);
+}
+
+.app__desktop-sign-up-wrapper {
   display: none;
 
   @include respond-above(medium) {
-    display: block;
+    --sign-up-form-input-bg: var(--col-rich-olive);
+    --sign-up-form-text-color: var(--col-total-white);
+    --auth-type-radio-bg: var(--sign-up-form-input-bg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: to-rem(30) to-rem(20);
+    background-color: var(--col-gordons-green);
+
+    .sign-up-form__title {
+      margin-bottom: to-rem(40);
+      font-size: to-rem(24);
+    }
+  }
+}
+
+.app__desktop-sign-up-form {
+  @include respond-above(large) {
+    max-width: to-rem(418);
   }
 }

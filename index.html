@@ -22,7 +22,18 @@
   <body>
     <div class="app">
       {{> main-content }}
-      <!-- <div class="app__desktop-sign-up">{{> sign-up-form }}</div> -->
+      <div class="app__desktop-sign-up-wrapper">
+        <a
+          class="app__logo"
+          href="https://mayan.bet/"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          {{> svg-icon width="114" height="22" name='logo' }}
+        </a>
+        {{> sign-up-form class="app__desktop-sign-up-form" title="Criar Sua
+        Conta Grátis" }}
+      </div>
     </div>
     {{> app-modal }}
   </body>

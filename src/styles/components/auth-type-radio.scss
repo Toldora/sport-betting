@@ -39,7 +39,7 @@
   padding: 0 to-rem(10);
   padding-left: calc(var(--icon-size) + var(--label-padding) + to-rem(5));
   padding-right: var(--label-padding);
-  background-color: var(--col-black-chestnut-oak);
+  background-color: var(--auth-type-radio-bg);
   transition: background-color var(--hover-transition);
 
   @include hover {

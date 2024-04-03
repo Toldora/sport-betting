@@ -10,10 +10,10 @@
   font-weight: 700;
   transition: background-color var(--hover-transition);
 
-  @include respond-above(medium) {
-    padding: 0 to-rem(30);
-    font-size: to-rem(18);
-  }
+  // @include respond-above(medium) {
+  //   padding: 0 to-rem(30);
+  //   font-size: to-rem(18);
+  // }
 
   &--disabled,
   &:disabled {

@@ -6,19 +6,40 @@
   padding-bottom: to-rem(30);
 
   @include respond-above(medium) {
-    height: vh(100);
+    --decor-width: 46%;
+
+    justify-content: center;
+    padding-left: var(--decor-width);
+    padding-top: to-rem(70);
+    padding-bottom: to-rem(70);
+  }
+
+  @include respond-above(large) {
+    --decor-width: #{min(58%, to-rem(800))};
+
+    padding-top: to-rem(106);
+    padding-bottom: to-rem(106);
   }
 }
 
 .main__logo {
   align-self: center;
   margin-bottom: to-rem(30);
+
+  @include respond-above(medium) {
+    display: none;
+  }
 }
 
 .main__title {
   margin-bottom: to-rem(10);
   font-size: to-rem(24);
   text-transform: uppercase;
+
+  @include respond-above(large) {
+    margin-bottom: to-rem(20);
+    font-size: to-rem(36);
+  }
 }
 
 .main__text--accent {
@@ -29,6 +50,10 @@
   color: var(--col-total-white);
   font-size: to-rem(16);
   text-transform: uppercase;
+
+  @include respond-above(large) {
+    font-size: to-rem(20);
+  }
 }
 
 .main__decor-wrapper {
@@ -37,10 +62,21 @@
   display: flex;
   justify-content: center;
   margin-bottom: -#{to-rem(40)};
+
+  @include respond-above(medium) {
+    position: absolute;
+    width: var(--decor-width);
+    margin-bottom: 0;
+    transform: translateX(-100%);
+  }
 }
 
 .main__decor {
   width: 75%;
+
+  @include respond-above(medium) {
+    width: 100%;
+  }
 }
 
 .main__glow {
@@ -54,33 +90,64 @@
   border-radius: 50%;
   background-color: rgba(var(--col-lexaloffle-green-rgb), 30%);
   filter: blur(to-rem(50));
+
+  @include respond-above(medium) {
+    bottom: -25%;
+    filter: blur(to-rem(125));
+  }
 }
 
 .main__cta-btn {
   position: relative;
   z-index: var(--z-default);
+
+  @include respond-above(medium) {
+    display: none;
+  }
 }
 
 .main__advantages-list {
   margin-top: to-rem(30);
   margin-bottom: to-rem(30);
+
+  @include respond-above(medium) {
+    max-width: min(75%, to-rem(310));
+  }
+
+  @include respond-above(large) {
+    margin-top: to-rem(60);
+    margin-bottom: to-rem(60);
+  }
 }
 
 .main__advantages-list-item {
   &:not(:last-child) {
     margin-bottom: to-rem(20);
+
+    @include respond-above(large) {
+      margin-bottom: to-rem(60);
+    }
   }
 }
 
 .main__advantage-title {
   margin-bottom: to-rem(5);
   font-size: to-rem(16);
+
+  @include respond-above(large) {
+    margin-bottom: to-rem(10);
+    font-size: to-rem(20);
+  }
 }
 
 .main__possibilities {
   margin-bottom: to-rem(10);
   color: var(--col-total-white);
   font-size: to-rem(16);
+
+  @include respond-above(large) {
+    margin-bottom: to-rem(20);
+  }
 }
 
 .main__partners-list {
@@ -88,4 +155,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: to-rem(10);
   place-items: center;
+
+  @include respond-above(large) {
+    grid-gap: to-rem(40);
+  }
 }

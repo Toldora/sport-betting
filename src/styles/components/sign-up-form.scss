@@ -1,6 +1,7 @@
 .sign-up-form__form {
   width: 100%;
   margin: 0 auto;
+  color: var(--sign-up-form-text-color);
 }
 
 .sign-up-form__form-fieldset {
@@ -98,7 +99,7 @@
   margin-top: to-rem(8);
   padding: to-rem(10) calc(to-rem(16) + var(--hide-pass-btn-width, to-rem(0)))
     to-rem(10) to-rem(16);
-  background-color: var(--col-black-chestnut-oak);
+  background-color: var(--sign-up-form-input-bg);
   border: none;
   border-radius: to-rem(12);
   box-shadow: none;

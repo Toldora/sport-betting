@@ -1,10 +1,14 @@
 <form
-  class='sign-up-form__form sign-up-form__form--auth-with-tel'
+  class='sign-up-form__form sign-up-form__form--auth-with-tel {{#if class}}{{class}}{{/if}}'
   name='signUp'
 >
   <fieldset class='sign-up-form__form-fieldset' name='fieldset'>
     <h2 class='sign-up-form__title'>
-      Junte-se a nós
+      {{#if title}}
+        {{title}}
+      {{else}}
+        Junte-se a nós
+      {{/if}}
     </h2>
 
     {{> auth-type-radio }}
@@ -14,27 +18,28 @@
         <div class='sign-up-form__text-input-label'>
           Digite seu número de telefone
         </div>
-        <div class="sign-up-form__tel-input-wrapper">
-        <div class='sign-up-form__input-stub'>
-          {{> svg-icon class='sign-up-form__country-img' width="24" height="20" name='brazil-flag' }}
+        <div class='sign-up-form__tel-input-wrapper'>
+          <div class='sign-up-form__input-stub'>
+            {{> svg-icon class='sign-up-form__country-img' width="24" height="20" name='brazil-flag' }}
 
-          <span>+55</span>
-        </div>
-        <input
-          class='sign-up-form__text-input'
-          name='tel'
-          required
-          type='tel'
-          autocomplete='off'
-          placeholder='           '
-          data-slots=' '
-        />
+            <span>+55</span>
+          </div>
+          <input
+            class='sign-up-form__text-input'
+            name='tel'
+            required
+            type='tel'
+            autocomplete='off'
+            placeholder='           '
+            data-slots=' '
+          />
         </div>
       </label>
     </div>
     <div class='sign-up-form__auth-inputs sign-up-form__auth-inputs--email'>
       <label class='sign-up-form__input-label'>
-        <div class='sign-up-form__text-input-label'>Digite seu endereço de e-mail</div>
+        <div class='sign-up-form__text-input-label'>Digite seu endereço de
+          e-mail</div>
         <input
           class='sign-up-form__text-input'
           name='email'
