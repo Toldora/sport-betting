@@ -1,6 +1,6 @@
 <form
   class='sign-up-form__form sign-up-form__form--auth-with-tel {{#if class}}{{class}}{{/if}}'
-  name='signUp'
+  name={{#if name}}'{{name}}'{{else}}'signUp'{{/if}}
 >
   <fieldset class='sign-up-form__form-fieldset' name='fieldset'>
     <h2 class='sign-up-form__title'>

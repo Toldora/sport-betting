@@ -1,5 +1,5 @@
-export const prepareInputMask = () => {
-  for (const el of document.querySelectorAll('[placeholder][data-slots]')) {
+export const prepareInputMask = formRef => {
+  for (const el of formRef.querySelectorAll('[placeholder][data-slots]')) {
     const pattern = el.getAttribute('placeholder'),
       slots = new Set(el.dataset.slots || '_'),
       prev = (j =>

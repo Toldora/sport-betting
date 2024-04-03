@@ -5,7 +5,7 @@ import queryString from 'query-string';
 import '@/plugins';
 
 import '@/js/modal';
-import { openSignUpModal } from '@/js/sign-up';
+import { SignUpForm, openSignUpModal } from '@/js/sign-up';
 // import '@/js/terms-and-privacy';
 import useViewportSizes from '@/js/use-viewport-sizes';
 import { getFromLS } from '@/js/local-storage';
@@ -25,5 +25,9 @@ if (isAlreadyRegistered) {
     `${import.meta.env.VITE_REDIRECT_URL}/?${stringifiedSearch}`,
   );
 }
+
+new SignUpForm({
+  formRef: document.forms.desktopSignUp,
+});
 
 showAuthBtnRef.addEventListener('click', openSignUpModal);
