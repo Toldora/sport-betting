@@ -7,6 +7,7 @@ const modalContentRef = document.querySelector('.js-app-modal-content');
 export const openSignUpModal = ({ isBlocked } = {}) => {
   const markup = compileSignUpFormMarkup({
     title: 'Junte-se a nós',
+    isEmailOnFirstPosition: true,
   });
 
   modalContentRef.innerHTML = '';
