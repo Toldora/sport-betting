@@ -2,20 +2,14 @@ import '@/styles/index.scss';
 
 import 'virtual:svg-icons-register';
 import queryString from 'query-string';
-import {
-  // SignUpForm,
-  compileSignUpFormMarkup,
-} from 'mayanbet-sdk';
+import { SignUpForm, compileSignUpFormMarkup } from 'mayanbet-sdk';
 import '@/plugins';
 
 import '@/js/modal';
 import { openSignUpModal } from '@/js/sign-up';
 // import '@/js/terms-and-privacy';
 import useViewportSizes from '@/js/use-viewport-sizes';
-import {
-  getFromLS,
-  // setToLS
-} from '@/js/local-storage';
+import { getFromLS, setToLS } from '@/js/local-storage';
 
 useViewportSizes();
 
@@ -46,12 +40,12 @@ const desktopSignUpWrapperRef = document.querySelector(
 
 desktopSignUpWrapperRef.insertAdjacentHTML('beforeend', markup);
 
-// new SignUpForm({
-//   formRef: document.forms[FORM_NAME],
-//   submitCallback: async () => {
-//     setToLS('isAlreadyRegistered', true);
-//   },
-// });
+new SignUpForm({
+  formRef: document.forms[FORM_NAME],
+  submitCallback: async () => {
+    setToLS('isAlreadyRegistered', true);
+  },
+});
 
 const showAuthBtnRef = document.querySelector('.js-show-auth-btn');
 
